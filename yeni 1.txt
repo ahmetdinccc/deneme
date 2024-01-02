@@ -1,0 +1,549 @@
+SingleChildScrollView(
+          child: Container(
+            padding: const EdgeInsets.all(10),
+            child: Column(
+              children: <Widget>[
+                SizedBox(
+                  height: 40,
+                  child: ListView(
+                    scrollDirection: Axis.horizontal,
+                    children: <Widget>[
+                      AspectRatio(
+                        aspectRatio: 2 / 1,
+                        child: Container(
+                          decoration: BoxDecoration(
+                              color: Colors.grey[400],
+                              borderRadius: BorderRadius.circular(15)),
+                          child: const Center(
+                            child: Text(
+                              "All",
+                              style: TextStyle(fontSize: 15),
+                            ),
+                          ),
+                        ),
+                      ),
+                      AspectRatio(
+                        aspectRatio: 2.2 / 1,
+                        child: Container(
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(15)),
+                          child: const Center(
+                            child: Text(
+                              "Sneakers",
+                              style: TextStyle(fontSize: 15),
+                            ),
+                          ),
+                        ),
+                      ),
+                      AspectRatio(
+                        aspectRatio: 2.2 / 1,
+                        child: Container(
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(15)),
+                          child: const Center(
+                            child: Text(
+                              "Football",
+                              style: TextStyle(fontSize: 15),
+                            ),
+                          ),
+                        ),
+                      ),
+                      AspectRatio(
+                        aspectRatio: 2.2 / 1,
+                        child: Container(
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(15)),
+                          child: const Center(
+                            child: Text(
+                              "Soccer",
+                              style: TextStyle(fontSize: 15),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                makeitem1('lib/assets/images/nike1.jpeg', 'red', context),
+                makeitem2(image: 'lib/assets/images/nike2.jpeg', tag: 'white'),
+                makeitem3(image: 'lib/assets/images/nike3.jpeg', tag: 'white'),
+                makeitem4(image: 'lib/assets/images/shoes1.jped.avif', tag: 'white'),
+                makeitem5(image: 'lib/assets/images/shoes2.avif', tag: 'white'),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget makeitem1(image, tag, BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        // Navigator.of(context).push(   MaterialPageRoute(builder: (context) => Shoes1(image: image)));
+      },
+      child: Container(
+        height: 250,
+        width: double.infinity,
+        padding: EdgeInsets.all(20),
+        margin: EdgeInsets.only(bottom: 20),
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(20),
+            image: DecorationImage(image: AssetImage(image), fit: BoxFit.cover),
+            boxShadow: [
+              BoxShadow(
+                  color: const Color.fromARGB(255, 177, 173, 173),
+                  blurRadius: 10,
+                  offset: Offset(0, 10))
+            ]),
+        child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Expanded(
+                      child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Text(
+                        "Nike Air Force 1 '07",
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20,
+                            color: const Color.fromARGB(255, 0, 0, 0)),
+                      ),
+                      SizedBox(
+                        height: 3,
+                      ),
+                      Text(
+                        "2519,30 TL",
+                        style: TextStyle(
+                            decoration: TextDecoration.lineThrough,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20,
+                            color: Color.fromARGB(255, 83, 83, 83)),
+                      ),
+                      Text(
+                        "900 TL",
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20,
+                            color: Color.fromARGB(255, 83, 83, 83)),
+                      )
+                    ],
+                  )),
+                  Container(
+                      width: 40,
+                      height: 40,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: Color.fromARGB(255, 0, 0, 0),
+                      ),
+                      child: Center(
+                        child: IconButton(
+                          onPressed: () {},
+                          icon: Icon(
+                            Icons.favorite_border,
+                            color: Colors.white,
+                          ),
+                        ),
+                      )),
+                ],
+              ),
+              Center(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                        primary: Color.fromARGB(255, 190, 190, 190),
+                        elevation: 4,
+                      ),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Icon(Icons.add_shopping_cart),
+                          SizedBox(width: 8),
+                          Text("SEPETE EKLE"),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              )
+            ]),
+      ),
+    );
+  }
+
+  Widget makeitem2({image, tag}) {
+    return Hero(
+        tag: Null,
+        child: GestureDetector(
+          onTap: () {
+            // Navigator.of(context).push(   MaterialPageRoute(builder: (context) => Shoes1(image: image)));
+          },
+          child: Container(
+            height: 250,
+            width: double.infinity,
+            padding: EdgeInsets.all(20),
+            margin: EdgeInsets.only(bottom: 20),
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                image: DecorationImage(
+                    image: AssetImage(image), fit: BoxFit.cover),
+                boxShadow: [
+                  BoxShadow(
+                      color: const Color.fromARGB(255, 177, 173, 173),
+                      blurRadius: 10,
+                      offset: Offset(0, 10))
+                ]),
+            child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Expanded(
+                          child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          Text(
+                            "Nike W Blazer Mid '77",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20,
+                                color: const Color.fromARGB(255, 0, 0, 0)),
+                          ),
+                          SizedBox(
+                            height: 3,
+                          ),
+                          Text(
+                            "2099,40 TL",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20,
+                                color: Color.fromARGB(255, 83, 83, 83)),
+                          ),
+                        ],
+                      )),
+                      Padding(
+                        padding: const EdgeInsets.only(right: 8),
+                        child: Container(
+                            width: 40,
+                            height: 40,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: Color.fromARGB(255, 0, 0, 0),
+                            ),
+                            child: Center(
+                              child: IconButton(
+                                onPressed: () {},
+                                icon: Icon(
+                                  Icons.favorite_border,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            )),
+                      ),
+                      Container(
+                          width: 40,
+                          height: 40,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: Color.fromARGB(255, 0, 0, 0),
+                          ),
+                          child: Center(
+                            child: IconButton(
+                              onPressed: () {},
+                              icon: Icon(
+                                Icons.add_shopping_cart,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ))
+                    ],
+                  ),
+                ]),
+          ),
+        ));
+  }
+
+  Widget makeitem3({image, tag}) {
+    return Hero(
+        tag: Null,
+        child: GestureDetector(
+          child: Container(
+            height: 250,
+            width: double.infinity,
+            padding: EdgeInsets.all(20),
+            margin: EdgeInsets.only(bottom: 20),
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                image: DecorationImage(
+                    image: AssetImage(image), fit: BoxFit.cover),
+                boxShadow: [
+                  BoxShadow(
+                      color: const Color.fromARGB(255, 177, 173, 173),
+                      blurRadius: 10,
+                      offset: Offset(0, 10))
+                ]),
+            child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Expanded(
+                          child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          Text(
+                            "Nike W Blazer Mid '77",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20,
+                                color: const Color.fromARGB(255, 0, 0, 0)),
+                          ),
+                          SizedBox(
+                            height: 3,
+                          ),
+                          Text(
+                            "2099,40 TL",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20,
+                                color: Color.fromARGB(255, 83, 83, 83)),
+                          ),
+                        ],
+                      )),
+                      Padding(
+                        padding: const EdgeInsets.only(right: 8),
+                        child: Container(
+                            width: 40,
+                            height: 40,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: Color.fromARGB(255, 0, 0, 0),
+                            ),
+                            child: Center(
+                              child: IconButton(
+                                onPressed: () {},
+                                icon: Icon(
+                                  Icons.favorite_border,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            )),
+                      ),
+                      Container(
+                          width: 40,
+                          height: 40,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: Color.fromARGB(255, 0, 0, 0),
+                          ),
+                          child: Center(
+                            child: IconButton(
+                              onPressed: () {},
+                              icon: Icon(
+                                Icons.add_shopping_cart,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ))
+                    ],
+                  )
+                ]),
+          ),
+        ));
+  }
+
+  Widget makeitem4({image, tag}) {
+    return Hero(
+        tag: Null,
+        child: GestureDetector(
+          child: Container(
+            height: 250,
+            width: double.infinity,
+            padding: EdgeInsets.all(20),
+            margin: EdgeInsets.only(bottom: 20),
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                image: DecorationImage(
+                    image: AssetImage(image), fit: BoxFit.cover),
+                boxShadow: [
+                  BoxShadow(
+                      color: const Color.fromARGB(255, 177, 173, 173),
+                      blurRadius: 10,
+                      offset: Offset(0, 10))
+                ]),
+            child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Expanded(
+                          child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          Text(
+                            "Nike W Blazer Mid '77",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20,
+                                color: const Color.fromARGB(255, 0, 0, 0)),
+                          ),
+                          SizedBox(
+                            height: 3,
+                          ),
+                          Text(
+                            "2099,40 TL",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20,
+                                color: Color.fromARGB(255, 83, 83, 83)),
+                          ),
+                        ],
+                      )),
+                      Padding(
+                        padding: const EdgeInsets.only(right: 8),
+                        child: Container(
+                            width: 40,
+                            height: 40,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: Color.fromARGB(255, 0, 0, 0),
+                            ),
+                            child: Center(
+                              child: IconButton(
+                                onPressed: () {},
+                                icon: Icon(
+                                  Icons.favorite_border,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            )),
+                      ),
+                      Container(
+                          width: 40,
+                          height: 40,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: Color.fromARGB(255, 0, 0, 0),
+                          ),
+                          child: Center(
+                            child: IconButton(
+                              onPressed: () {},
+                              icon: Icon(
+                                Icons.add_shopping_cart,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ))
+                    ],
+                  )
+                ]),
+          ),
+        ));
+  }
+
+  Widget makeitem5({image, tag}) {
+    return Hero(
+        tag: Null,
+        child: GestureDetector(
+          child: Container(
+            height: 250,
+            width: double.infinity,
+            padding: EdgeInsets.all(20),
+            margin: EdgeInsets.only(bottom: 20),
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                image: DecorationImage(
+                    image: AssetImage(image), fit: BoxFit.cover),
+                boxShadow: [
+                  BoxShadow(
+                      color: const Color.fromARGB(255, 177, 173, 173),
+                      blurRadius: 10,
+                      offset: Offset(0, 10))
+                ]),
+            child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Expanded(
+                          child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          Text(
+                            "Nike W Blazer Mid '77",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20,
+                                color: const Color.fromARGB(255, 0, 0, 0)),
+                          ),
+                          SizedBox(
+                            height: 3,
+                          ),
+                          Text(
+                            "2099,40 TL",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20,
+                                color: Color.fromARGB(255, 83, 83, 83)),
+                          ),
+                        ],
+                      )),
+                      Padding(
+                        padding: const EdgeInsets.only(right: 8),
+                        child: Container(
+                            width: 40,
+                            height: 40,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: Color.fromARGB(255, 0, 0, 0),
+                            ),
+                            child: Center(
+                              child: IconButton(
+                                onPressed: () {},
+                                icon: Icon(
+                                  Icons.favorite_border,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            )),
+                      ),
+                      Container(
+                          width: 40,
+                          height: 40,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: Color.fromARGB(255, 0, 0, 0),
+                          ),
+                          child: Center(
+                            child: IconButton(
+                              onPressed: () {},
+                              icon: Icon(
+                                Icons.add_shopping_cart,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ))
+                    ],
+                  )
+                ]),
+          ),
+        ));
